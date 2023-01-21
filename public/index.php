@@ -35,7 +35,7 @@ $app->get('/search', function (Request $request, Response $response, $args) {
     $db = new DBFuncs('db.sqlite3');
     $sort = 'DESC';
 
-    if(array_key_exists('sort') && strtolower($requestParams['sort']) == "asc"){
+    if(array_key_exists('sort', $requestParams) && strtolower($requestParams['sort']) == "asc"){
         $sort = 'ASC';
     }
 
