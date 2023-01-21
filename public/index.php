@@ -28,7 +28,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
 
 $app->get('/search', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
-    
+
     $requestParams = $request->getQueryParams();
     $searchParam = $requestParams['q'];
 
