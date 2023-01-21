@@ -50,6 +50,10 @@ $app->get('/search', function (Request $request, Response $response, $args) {
 
 $app->get('/martin', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
+    $randomNum = rand(0,1);
+    if($randomNum == 0) {
+        return $response->withStatus(302)->withHeader('Location', '/search?q=Martin');
+    }
     return $view->render($response, 'martin.html');
 });
 
