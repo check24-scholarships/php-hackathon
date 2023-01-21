@@ -1,19 +1,17 @@
 <style>
-    @keyframes imganim {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
     img {
+        animation: rotation .1s infinite linear;
         margin-top: auto;
         margin-left: auto;
-        animation-name: imganim;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
+    }
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
     }
 </style>
 
