@@ -23,5 +23,10 @@ $app->get('/', function (Request $request, Response $response, $args) {
     ]);
 });
 
+$app->get('/martin', function (Request $request, Response $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'martin.html');
+});
+
 $app->run();
 
