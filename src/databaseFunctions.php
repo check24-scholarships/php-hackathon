@@ -1,10 +1,12 @@
 <?php
+include "src/product.php";
+
 class DBFuncs {
     public SQLite3 $db;
 
     function __construct(string $filename)
     {
-        $db = new SQLite3($filename);
+        $this->db = new SQLite3($filename);
     }
 
     function setupTables() {
@@ -19,5 +21,9 @@ class DBFuncs {
             array_push($products, $product);
         }
         return $products;
+    }
+
+    function insertProductIntoDatabase(Product $newProduct) {
+        $this->db->exec("INSERT INTO Product (name, price, image) VALUES ('{$newProduct->getName()}', '{$newProduct->getPrice()}', '{$newProduct->getImage()}');");
     }
 }
