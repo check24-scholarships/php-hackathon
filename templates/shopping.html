@@ -46,9 +46,25 @@
 
         .search form {
             display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
+        
+        .row {
+            margin-bottom: 10px;
+            align-items: center;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .button {
+            padding: 10px;
+        }
+        
         .search form input[type=text] {
+            padding: 10px;
+            margin-right: 20px;
             flex: 1;
         }
 
@@ -71,7 +87,6 @@
             padding-bottom: 12px;
             text-align: left;
             background-color: #005ea8;
-            ;
             color: white;
         } 
 
@@ -95,9 +110,13 @@
         <div class="content">
             <div class="search">
                 <form>
-                    <input type="text" name="q" placeholder="Suchbegriff" autofocus="autofocus" />
-                    <input type="submit" value="Suchen" />
-                    <input type="checkbox" name="sort" value="ASC"/> Sort Ascending
+                    <div class="row">
+                        <input type="text" name="q" placeholder="Suchbegriff" autofocus="autofocus" />
+                        <input class="button" type="submit" value="Suchen" />
+                    </div>
+                    <div class="row">
+                        <input type="checkbox" name="sort" value="ASC"/> Sort Ascending
+                    </div>
                 </form>
             </div>
             <div class="results">
