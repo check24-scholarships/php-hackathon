@@ -1,11 +1,11 @@
 <?php
 class Product {
  
-    private $name;
-    private $price;
-    private $image;
+    private string $name;
+    private int $price;
+    private string $image;
 
-    function __construct($name, $price, $image){
+    function __construct(string $name, int $price, string $image){
         $this->name = $name;
         $this->price = $price;
         $this->image = $image;
