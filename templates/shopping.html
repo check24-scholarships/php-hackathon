@@ -97,24 +97,25 @@
                 </form>
             </div>
             <div class="results">
-                {% }
                 <h3>Ergebnisse</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Bild</th>
-                            <th scope="col">Produkt</th>
-                            <th scope="col">Preis</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src="https://picsum.photos/200" /></td>
-                            <td>Eine Tüte Luft</td>
-                            <td>100,00€</td>
-                        </tr>
-                    </tbody>
-                </table>
+                {% for _, product in products %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Bild</th>
+                                <th scope="col">Produkt</th>
+                                <th scope="col">Preis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="{{ product.getImage() }}"/></td>
+                                <td>{{ product.getName() }}</td>
+                                <td>{{ product.getPrice() }}€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                {% endfor %}
             </div>
         </div>
     </main>
