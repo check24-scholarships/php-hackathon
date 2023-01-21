@@ -23,6 +23,11 @@ $app->get('/', function (Request $request, Response $response, $args) {
     ]);
 });
 
+$app->get('/shopping', function (Request $request, Response $response, $args) {
+    $view = Twig::fromRequest($request);
+    return $view->render($response, 'shopping.html');
+});
+
 $app->get('/martin', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'martin.html');
