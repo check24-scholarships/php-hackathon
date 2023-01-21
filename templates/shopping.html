@@ -73,11 +73,14 @@
             background-color: #005ea8;
             ;
             color: white;
-        }
+        } 
 
-        .results img {
+        .img {
             width: 200px;
             height: 200px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
@@ -109,7 +112,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img src="{{ product.getImage() }}"/></td>
+                                <td class="img" style="background-image: url('{{ product.getImage() }}');"></td>
                                 <td>{{ product.getName() }}</td>
                                 <td>{{ product.getPrice() }}€</td>
                             </tr>
