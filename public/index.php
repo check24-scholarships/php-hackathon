@@ -17,7 +17,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 
 $app->get('/', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
-    $time = date("d/m/Y H:i");
+    $time = date("d/m/Y H:i:s");
     return $view->render($response, 'index.html', [
         'time' => $time,
     ]);
