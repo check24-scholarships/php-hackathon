@@ -22,15 +22,26 @@
         }
 
         header {
-            background-color: lightblue;
+            background-color: #063773;
         }
 
         header .content {
             max-width: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
             margin: 0 auto;
+            height: 100px;
+        }
+        
+        header .content img {
+            height: 190%;
+            fill: white;
         }
 
         header h1 {
+            color: white;
             margin: 0;
             padding: 0.67em 0;
         }
@@ -48,6 +59,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffbb1c;
         }
         
         .row {
@@ -60,11 +74,16 @@
         
         .button {
             padding: 10px;
+            background-color: white;
+            border: none;
+            border-radius: 3px;
         }
         
         .search form input[type=text] {
             padding: 10px;
             margin-right: 20px;
+            border-radius: 3px;
+            border: none;
             flex: 1;
         }
 
@@ -76,6 +95,7 @@
         .results table th {
             border: 1px solid #ddd;
             padding: 8px;
+            border-radius: 5px;
         }
 
         .results table tr:hover {
@@ -97,13 +117,23 @@
             background-size: contain;
             background-repeat: no-repeat;
         }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="content">
-            <h1>CHECK24 Shopping</h1>
+            <img src="https://media.aubi-plus.com/files/premiumprofil/logo/large/54be4fa-check24.jpg">
+            <h1>Shopping</h1>
         </div>
     </header>
     <main>
@@ -134,7 +164,7 @@
                             <tr>
                                 <td class="img" style="background-image: url('{{ product.getImage() }}');"></td>
                                 <td>{{ product.getName() }}</td>
-                                <td>{{ product.getPrice() }}€</td>
+                                <td>{{ product.getPrice() / 100 }}€</td>
                             </tr>
                         </tbody>
                     </table>
